@@ -1,0 +1,404 @@
+.projectPage {
+    min-height: 100vh;
+    background: var(--neutral-950);
+    padding-top: 100px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.projectPage::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.backNav {
+    margin-bottom: 40px;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neutral-400);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.backLink:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-4px);
+}
+
+/* Bento Grid Layout */
+.bentoGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    gap: 24px;
+}
+
+/* Common Card Styles */
+.bentoCard {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-radius: 24px;
+    padding: 32px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bentoCard:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Card: Title, Short Desc, Tags */
+.headerCard {
+    grid-column: span 12;
+    /* Full width */
+    background: linear-gradient(145deg, rgba(30, 58, 138, 0.2) 0%, rgba(15, 23, 42, 0.8) 100%);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.shortDesc {
+    font-size: 1.1rem;
+    color: var(--neutral-300);
+    max-width: 800px;
+    margin-bottom: 24px;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Image Card: Main Visual - Memanjang ke kanan */
+.imageCard {
+    grid-column: span 12;
+    /* Full width so it spans horizontally */
+    grid-row: span 2;
+    padding: 0;
+    min-height: 480px;
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    position: relative;
+    background: #000;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #0a0a0a;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent 40%);
+    z-index: 1;
+}
+
+/* Slider Controls */
+.sliderNav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.navBtn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s;
+    pointer-events: auto;
+}
+
+.navBtn:hover {
+    background: rgba(59, 130, 246, 0.8);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: scale(1.1);
+}
+
+.sliderDots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dotActive {
+    background: var(--primary-500);
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* Details Card: Overview text - Expanded to span 8 */
+.detailsCard {
+    grid-column: span 8;
+}
+
+/* Portrait specific spans */
+.portraitGrid .imageCard {
+    grid-column: span 4;
+    grid-row: span 3;
+    min-height: 600px;
+}
+
+.portraitGrid .detailsCard {
+    grid-column: span 8;
+}
+
+.portraitGrid .techCard {
+    grid-column: span 8;
+}
+
+.portraitGrid .featuresCard {
+    grid-column: span 4;
+}
+
+.portraitGrid .linksCard {
+    grid-column: span 4;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iconBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-400);
+}
+
+.cardTitle {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--neutral-50);
+    margin: 0;
+}
+
+.longDesc {
+    color: var(--neutral-300);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    white-space: pre-line;
+}
+
+/* Tech Stack Card - Spans 4 to match Links card */
+.techCard {
+    grid-column: span 4;
+}
+
+.techGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.techBadge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--neutral-300);
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.techBadge:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Features Card */
+.featuresCard {
+    grid-column: span 8;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+}
+
+.featureIcon {
+    margin-top: 2px;
+    color: var(--primary-500);
+}
+
+.featureText {
+    font-size: 0.9rem;
+    color: var(--neutral-300);
+    line-height: 1.5;
+}
+
+/* Links Card */
+.linksCard {
+    grid-column: span 4;
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.visitBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: white;
+    color: black;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 16px;
+}
+
+.visitBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .imageCard {
+        grid-column: span 12;
+        grid-row: auto;
+    }
+
+    .detailsCard {
+        grid-column: span 12;
+    }
+
+    .techCard {
+        grid-column: span 12;
+    }
+
+    .featuresCard {
+        grid-column: span 12;
+    }
+
+    .linksCard {
+        grid-column: span 12;
+    }
+
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .bentoCard {
+        padding: 24px;
+    }
+}
