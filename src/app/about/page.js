@@ -117,18 +117,22 @@ export default function AboutPage() {
                             <span className={styles.badge}>🌍 Magelang, Indonesia</span>
                         </div>
                         <p className={styles.heroBio}>
-                            I&apos;m a Bachelor of Computer Science with experience in web development,
-                            IoT systems, and hardware support. Skilled in Next.js, basic backend frameworks,
-                            and IoT integration, I enjoy building responsive and efficient digital solutions
-                            that connect software and hardware technologies. Passionate about continuous learning
-                            and emerging technologies—particularly Artificial Intelligence—I am committed to
-                            growing as a developer and contributing to impactful technology-driven projects.
+                            I&apos;m achelor of Computer Science with experience in web development,
+                            IoT systems, and hardware support. Skilled in Next.js, basic backend
+                            frameworks, and IoT integration, I enjoy building responsive and efficient
+                            digital solutions that connect software and hardware technologies. Passionate
+                            about continuous learning and emerging technologies particularly Artificial
+                            Intelligence I am committed to growing as a developer in dynamic and innovative
+                            environments.
                         </p>
                         <p className={styles.heroBio}>
-                            Beyond academic and project experience, I continuously explore emerging technologies
-                            especially Artificial Intelligence and Large Language Model (LLM) concepts through
-                            self-learning and independent experimentation. I am currently seeking an opportunity
-                            where I can grow as a developer and contribute to impactful, technology-driven projects.
+                            Beyond academic and project experience, I continuously explore
+                            Artificial Intelligence and Large Language Model (LLM) concepts
+                            through self-learning and independent experimentation. I also have
+                            a growing interest in Data Analysis and Quality Assurance, supported
+                            by basic SQL skills for data querying and analysis. Additionally,
+                            I possess basic content editing skills that help me present technical
+                            information clearly and effectively.
                         </p>
                         <div className={styles.heroContact}>
                             <a href="mailto:adisaputra1523@gmail.com" className={styles.contactChip}>
