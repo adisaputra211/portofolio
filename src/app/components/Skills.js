@@ -95,8 +95,8 @@ const skillCategories = [
 const techLogos = [
     'React', 'Next.js', 'JavaScript', 'TypeScript',
     'Python', 'ArduinoIDE', 'Git', 'Cloudflared',
-    'SQL', 'Canva', 'IoT', 'ESP32', 'Node.js', 'Postman',
-    'AI', 'LLM', 'Analysis', 'QA',
+    'SQL', 'Canva', 'IoT', 'ESP32', 'Expo Go',
+    'AI', 'LLM', 'Analysis', 'Quality Assurance', 'Os Installation', 'Hardware Troubleshooting'
 ];
 
 export default function Skills() {
