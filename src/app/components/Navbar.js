@@ -1,11 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
+import { handleNavigation } from '../utils/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +20,14 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Projects', id: 'projects' },
   ];
 
-  const handleLinkClick = () => {
+  const onNavLinkClick = (e, id) => {
+    e.preventDefault();
+    handleNavigation(router, pathname, id);
     setIsMobileOpen(false);
   };
 
@@ -29,7 +35,15 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navContainer}`}>
         {/* Logo & Name */}
-        <a href="#hero" className={styles.brand} onClick={handleLinkClick}>
+        <a
+          href="/"
+          className={styles.brand}
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavigation(router, pathname, 'hero');
+            setIsMobileOpen(false);
+          }}
+        >
           <div className={styles.logoIcon}>
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <defs>
@@ -49,11 +63,20 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className={styles.navLinks}>
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className={styles.navLink}>
+            <a
+              key={link.name}
+              href={`#${link.id}`}
+              className={styles.navLink}
+              onClick={(e) => onNavLinkClick(e, link.id)}
+            >
               {link.name}
             </a>
           ))}
-          <a href="#contact" className={`btn btn-primary ${styles.navCta}`}>
+          <a
+            href="#contact"
+            className={`btn btn-primary ${styles.navCta}`}
+            onClick={(e) => onNavLinkClick(e, 'contact')}
+          >
             Hire Me
           </a>
         </div>
@@ -74,14 +97,18 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={`#${link.id}`}
               className={styles.mobileLink}
-              onClick={handleLinkClick}
+              onClick={(e) => onNavLinkClick(e, link.id)}
             >
               {link.name}
             </a>
           ))}
-          <a href="#contact" className="btn btn-primary" onClick={handleLinkClick}>
+          <a
+            href="#contact"
+            className="btn btn-primary"
+            onClick={(e) => onNavLinkClick(e, 'contact')}
+          >
             Hire Me
           </a>
         </div>

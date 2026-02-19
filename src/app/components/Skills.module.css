@@ -17,89 +17,112 @@
 
 .categories {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(280px, auto);
     gap: 24px;
     position: relative;
     z-index: 1;
 }
 
 .category {
+    position: relative;
     padding: 32px;
+    overflow: hidden;
+    transition: all var(--transition-slow);
+}
+
+/* Sizing variations - base 6 columns */
+.span3 {
+    grid-column: span 3;
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--accent-color-rgb), 0.4);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .catHeader {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 .catIcon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    width: 44px;
+    height: 44px;
+    background: color-mix(in srgb, var(--accent-color) 15%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-color) 25%, transparent);
     border-radius: 12px;
-    color: var(--primary-400);
+    color: var(--accent-color);
+    transition: all var(--transition-normal);
+}
+
+.category:hover .catIcon {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--accent-color);
+    color: white;
 }
 
 .catTitle {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
+    color: var(--neutral-100);
 }
 
 .skillsList {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.skillItem {
-    width: 100%;
-}
-
-.skillInfo {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-.skillName {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--neutral-200);
-}
-
-.skillLevel {
+.skillBadge {
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
     font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--primary-400);
+    font-weight: 500;
+    color: var(--neutral-300);
+    transition: all var(--transition-normal);
 }
 
-.progressBar {
-    width: 100%;
-    height: 6px;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
+.category:hover .skillBadge {
+    border-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
 }
 
-.progressFill {
-    height: 100%;
-    width: 0;
-    background: var(--gradient-button);
-    border-radius: 3px;
-    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+.skillBadge:hover {
+    background: color-mix(in srgb, var(--accent-color) 15%, transparent) !important;
+    border-color: var(--accent-color) !important;
+    color: white !important;
+    transform: translateY(-2px);
 }
 
-/* When parent becomes visible, animate the bar */
-.category.visible .progressFill,
-:global(.visible) .progressFill {
-    width: var(--target-width);
+/* Decorative Card Glow */
+.cardGlow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.05;
+    filter: blur(40px);
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.category:hover .cardGlow {
+    opacity: 0.15;
 }
 
 /* Tech Marquee */
@@ -152,11 +175,22 @@
     .categories {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .span3,
+    .span2 {
+        grid-column: span 1;
+    }
 }
 
 @media (max-width: 768px) {
     .categories {
         grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .span3,
+    .span2 {
+        grid-column: span 1;
     }
 
     .category {

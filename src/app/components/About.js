@@ -71,22 +71,24 @@ export default function About() {
                         </div>
 
                         <p className={`${styles.bio} animate-on-scroll delay-3`}>
-                            I&apos;m achelor of Computer Science with experience in web development,
-                            IoT systems, and hardware support. Skilled in Next.js, basic backend
-                            frameworks, and IoT integration, I enjoy building responsive and efficient
-                            digital solutions that connect software and hardware technologies. Passionate
-                            about continuous learning and emerging technologies particularly Artificial
-                            Intelligence I am committed to growing as a developer in dynamic and innovative
-                            environments.
+                            I&apos;m Bachelor of Computer Science with experience in web development,
+                            IoT systems, and hardware support. Skilled in Next.js, basic backend frameworks,
+                            and IoT integration, I enjoy building responsive and efficient digital solutions
+                            that connect software and hardware technologies. My background in hardware support
+                            gives me a strong foundation in troubleshooting, system diagnostics, and understanding
+                            the physical layer of technology from component-level issues to full system integration.
                         </p>
-
+                        <p className={`${styles.bio} animate-on-scroll delay-3`}>
+                            Passionate about continuous learning and emerging technologies
+                            particularly Artificial Intelligence I am committed to growing as a
+                            developer in dynamic and innovative environments.
+                        </p>
                         <p className={`${styles.bio} animate-on-scroll delay-4`}>
-                            Beyond academic and project experience, I continuously explore
-                            Artificial Intelligence and Large Language Model (LLM) concepts
-                            through self-learning and independent experimentation. I also have
-                            a growing interest in Data Analysis and Quality Assurance, supported
-                            by basic SQL skills for data querying and analysis. Additionally,
-                            I possess basic content editing skills that help me present technical
+                            Beyond academic and project experience, I continuously explore Artificial
+                            Intelligence and Large Language Model (LLM) concepts through self learning
+                            and independent experimentation. I also have a growing interest in Data Analysis
+                            and Quality Assurance, supported by basic SQL skills for data querying and analysis.
+                            Additionally, I possess basic content editing skills that help me present technical
                             information clearly and effectively.
                         </p>
 

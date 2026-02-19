@@ -169,24 +169,21 @@
 .statNumber {
     display: block;
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 800;
     line-height: 1.2;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--neutral-100);
     letter-spacing: -0.01em;
     text-transform: uppercase;
 }
 
 .statLabel {
-    font-size: 0.8rem;
-    color: var(--neutral-400);
+    font-size: 0.75rem;
+    color: var(--primary-300);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     font-weight: 700;
-    opacity: 0.8;
+    opacity: 0.9;
     line-height: 1.2;
 }
 

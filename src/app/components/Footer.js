@@ -1,11 +1,27 @@
+'use client';
+
+import { useRouter, usePathname } from 'next/navigation';
+import { handleNavigation } from '../utils/navigation';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const onFooterLinkClick = (e, id) => {
+        e.preventDefault();
+        handleNavigation(router, pathname, id);
+    };
+
     return (
         <footer className={styles.footer}>
             <div className={`container ${styles.footerContent}`}>
                 <div className={styles.left}>
-                    <a href="#hero" className={styles.brand}>
+                    <a
+                        href="/"
+                        className={styles.brand}
+                        onClick={(e) => onFooterLinkClick(e, 'hero')}
+                    >
                         <div className={styles.logoIcon}>
                             <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
                                 <defs>
@@ -24,10 +40,10 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.links}>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about" onClick={(e) => onFooterLinkClick(e, 'about')}>About</a>
+                    <a href="#skills" onClick={(e) => onFooterLinkClick(e, 'skills')}>Skills</a>
+                    <a href="#projects" onClick={(e) => onFooterLinkClick(e, 'projects')}>Projects</a>
+                    <a href="#contact" onClick={(e) => onFooterLinkClick(e, 'contact')}>Contact</a>
                 </div>
 
                 <div className={styles.divider}></div>

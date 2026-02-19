@@ -85,7 +85,7 @@ export default function AboutPage() {
 
             {/* Back Button */}
             <div className={styles.backWrap}>
-                <Link href="/#about" className={styles.backBtn}>
+                <Link href="/?scroll=about" className={styles.backBtn}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <polyline points="15,18 9,12 15,6" />
                     </svg>
@@ -117,21 +117,24 @@ export default function AboutPage() {
                             <span className={styles.badge}>🌍 Magelang, Indonesia</span>
                         </div>
                         <p className={styles.heroBio}>
-                            I&apos;m achelor of Computer Science with experience in web development,
-                            IoT systems, and hardware support. Skilled in Next.js, basic backend
-                            frameworks, and IoT integration, I enjoy building responsive and efficient
-                            digital solutions that connect software and hardware technologies. Passionate
-                            about continuous learning and emerging technologies particularly Artificial
-                            Intelligence I am committed to growing as a developer in dynamic and innovative
-                            environments.
+                            I&apos;m Bachelor of Computer Science with experience in web development,
+                            IoT systems, and hardware support. Skilled in Next.js, basic backend frameworks,
+                            and IoT integration, I enjoy building responsive and efficient digital solutions
+                            that connect software and hardware technologies. My background in hardware support
+                            gives me a strong foundation in troubleshooting, system diagnostics, and understanding
+                            the physical layer of technology from component-level issues to full system integration.
                         </p>
                         <p className={styles.heroBio}>
-                            Beyond academic and project experience, I continuously explore
-                            Artificial Intelligence and Large Language Model (LLM) concepts
-                            through self-learning and independent experimentation. I also have
-                            a growing interest in Data Analysis and Quality Assurance, supported
-                            by basic SQL skills for data querying and analysis. Additionally,
-                            I possess basic content editing skills that help me present technical
+                            Passionate about continuous learning and emerging technologies
+                            particularly Artificial Intelligence I am committed to growing as a
+                            developer in dynamic and innovative environments.
+                        </p>
+                        <p className={styles.heroBio}>
+                            Beyond academic and project experience, I continuously explore Artificial
+                            Intelligence and Large Language Model (LLM) concepts through self learning
+                            and independent experimentation. I also have a growing interest in Data Analysis
+                            and Quality Assurance, supported by basic SQL skills for data querying and analysis.
+                            Additionally, I possess basic content editing skills that help me present technical
                             information clearly and effectively.
                         </p>
                         <div className={styles.heroContact}>
