@@ -49,12 +49,11 @@ export default function Navbar() {
             <Image
               src="/Logo.png"
               alt="Logo"
-              width={32}
-              height={32}
+              width={33}
+              height={33}
               className={styles.logoImg}
             />
           </div>
-          <span className={styles.brandName}>Home</span>
         </a>
 
         {/* Desktop Nav */}

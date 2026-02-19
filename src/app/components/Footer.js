@@ -27,12 +27,11 @@ export default function Footer() {
                             <Image
                                 src="/Logo.png"
                                 alt="Logo"
-                                width={28}
-                                height={28}
+                                width={33}
+                                height={33}
                                 className={styles.logoImg}
                             />
                         </div>
-                        <span className={styles.brandName}>Portfolio</span>
                     </a>
                     <p className={styles.tagline}>Building the future, one line of code at a time.</p>
                 </div>
