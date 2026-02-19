@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { handleNavigation } from '../utils/navigation';
 import styles from './Footer.module.css';
@@ -23,16 +24,13 @@ export default function Footer() {
                         onClick={(e) => onFooterLinkClick(e, 'hero')}
                     >
                         <div className={styles.logoIcon}>
-                            <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
-                                <defs>
-                                    <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="28" y2="28">
-                                        <stop offset="0%" stopColor="#60a5fa" />
-                                        <stop offset="100%" stopColor="#06b6d4" />
-                                    </linearGradient>
-                                </defs>
-                                <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#footerLogoGrad)" strokeWidth="2" fill="none" />
-                                <circle cx="14" cy="14" r="3" fill="url(#footerLogoGrad)" />
-                            </svg>
+                            <Image
+                                src="/Logo.png"
+                                alt="Logo"
+                                width={28}
+                                height={28}
+                                className={styles.logoImg}
+                            />
                         </div>
                         <span className={styles.brandName}>Portfolio</span>
                     </a>

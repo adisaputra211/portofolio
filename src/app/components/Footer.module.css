@@ -33,8 +33,10 @@
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: 10px;
+}
+
+.logoImg {
+    object-fit: contain;
 }
 
 .brandName {

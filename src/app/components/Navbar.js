@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { handleNavigation } from '../utils/navigation';
 import styles from './Navbar.module.css';
@@ -45,19 +46,15 @@ export default function Navbar() {
           }}
         >
           <div className={styles.logoIcon}>
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <defs>
-                <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28">
-                  <stop offset="0%" stopColor="#60a5fa" />
-                  <stop offset="100%" stopColor="#06b6d4" />
-                </linearGradient>
-              </defs>
-              <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="url(#logoGrad)" strokeWidth="2" fill="none" />
-              <path d="M14 8L20 11V17L14 20L8 17V11L14 8Z" fill="url(#logoGrad)" opacity="0.5" />
-              <circle cx="14" cy="14" r="3" fill="url(#logoGrad)" />
-            </svg>
+            <Image
+              src="/Logo.png"
+              alt="Logo"
+              width={42}
+              height={42}
+              className={styles.logoImg}
+            />
           </div>
-          <span className={styles.brandName}>Portfolio</span>
+          <span className={styles.brandName}>Home</span>
         </a>
 
         {/* Desktop Nav */}

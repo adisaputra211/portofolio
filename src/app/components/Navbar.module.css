@@ -26,7 +26,8 @@
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    /* Reduced gap */
     text-decoration: none;
     transition: all var(--transition-normal);
 }
@@ -39,17 +40,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    border-radius: 12px;
+    width: 42px;
+    /* Matched image size */
+    height: 42px;
     transition: all var(--transition-normal);
 }
 
+.logoImg {
+    object-fit: contain;
+}
+
 .brand:hover .logoIcon {
-    border-color: rgba(59, 130, 246, 0.6);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    /* Removed box-shadow and border-color */
+    transform: scale(1.05);
 }
 
 .brandName {
