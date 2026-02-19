@@ -25,7 +25,7 @@ export default function ProjectSlider({ images, title, color, orientation }) {
     if (!images || images.length === 0) return null;
 
     return (
-        <div className={`${styles.bentoCard} ${styles.imageCard}`}>
+        <div className={`${styles.bentoCard} ${styles.imageCard} animate-on-scroll delay-2`}>
             <div
                 className={styles.imageWrapper}
                 style={{

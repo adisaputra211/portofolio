@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-export function useScrollAnimation() {
+export function useScrollAnimation(options = { retrigger: true }) {
     const observerRef = useRef(null);
 
     useEffect(() => {
@@ -11,8 +11,8 @@ export function useScrollAnimation() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                    } else {
-                        // Remove class when not intersecting to allow re-triggering
+                    } else if (options.retrigger) {
+                        // Only remove class if retrigger is enabled
                         entry.target.classList.remove('visible');
                     }
                 });
