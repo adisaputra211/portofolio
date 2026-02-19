@@ -40,9 +40,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
+    width: 32px;
     /* Matched image size */
-    height: 52px;
+    height: 32px;
     transition: all var(--transition-normal);
 }
 
