@@ -4,12 +4,12 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 15px 0;
     transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-    padding: 12px 0;
+    padding: 8px 0;
     background: rgba(2, 6, 23, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -40,9 +40,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
+    width: 52px;
     /* Matched image size */
-    height: 42px;
+    height: 52px;
     transition: all var(--transition-normal);
 }
 

@@ -6,6 +6,8 @@ export const metadata = {
   keywords: 'Adi Saputra, Portfolio, Web Developer, IoT, Next.js, Computer Science, Magelang',
   icons: {
     icon: '/Logo.png',
+    shortcut: '/Logo.png',
+    apple: '/Logo.png',
   },
 };
 
