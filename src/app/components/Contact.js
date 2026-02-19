@@ -11,10 +11,33 @@ export default function Contact() {
         message: '',
     });
 
-    const handleSubmit = (e) => {
+    const [status, setStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setStatus('submitting');
+
+        try {
+            const response = await fetch('https://formspree.io/f/xbdakbpe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                // Reset status after 5 seconds
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setStatus('error');
+        }
     };
 
     const handleChange = (e) => {
@@ -110,69 +133,109 @@ export default function Contact() {
                     </div>
 
                     {/* Contact Form */}
-                    <form className={`${styles.form} animate-on-scroll delay-2`} onSubmit={handleSubmit}>
-                        <div className={styles.formRow}>
+                    <div className={styles.formContainer}>
+                        {status === 'success' && (
+                            <div className={styles.successMessage}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                                <span>Pesan berhasil dikirim! Saya akan menghubungi Anda segera.</span>
+                            </div>
+                        )}
+
+                        {status === 'error' && (
+                            <div className={styles.errorMessage}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="8" x2="12" y2="12" />
+                                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                                </svg>
+                                <span>Maaf, terjadi kesalahan. Silakan coba lagi nanti.</span>
+                            </div>
+                        )}
+
+                        <form className={`${styles.form} animate-on-scroll delay-2`} onSubmit={handleSubmit}>
+                            <div className={styles.formRow}>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="name" className={styles.label}>Name</label>
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Your name"
+                                        required
+                                        className={styles.input}
+                                        disabled={status === 'submitting'}
+                                    />
+                                </div>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="email" className={styles.label}>Email</label>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="your@email.com"
+                                        required
+                                        className={styles.input}
+                                        disabled={status === 'submitting'}
+                                    />
+                                </div>
+                            </div>
                             <div className={styles.formGroup}>
-                                <label htmlFor="name" className={styles.label}>Name</label>
+                                <label htmlFor="subject" className={styles.label}>Subject</label>
                                 <input
-                                    id="name"
+                                    id="subject"
                                     type="text"
-                                    name="name"
-                                    value={formData.name}
+                                    name="subject"
+                                    value={formData.subject}
                                     onChange={handleChange}
-                                    placeholder="Your name"
+                                    placeholder="Project subject"
                                     required
                                     className={styles.input}
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
                             <div className={styles.formGroup}>
-                                <label htmlFor="email" className={styles.label}>Email</label>
-                                <input
-                                    id="email"
-                                    type="email"
-                                    name="email"
-                                    value={formData.email}
+                                <label htmlFor="message" className={styles.label}>Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    value={formData.message}
                                     onChange={handleChange}
-                                    placeholder="your@email.com"
+                                    placeholder="Tell me about your project..."
                                     required
-                                    className={styles.input}
+                                    rows={5}
+                                    className={`${styles.input} ${styles.textarea}`}
+                                    disabled={status === 'submitting'}
                                 />
                             </div>
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="subject" className={styles.label}>Subject</label>
-                            <input
-                                id="subject"
-                                type="text"
-                                name="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                placeholder="Project subject"
-                                required
-                                className={styles.input}
-                            />
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="message" className={styles.label}>Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                placeholder="Tell me about your project..."
-                                required
-                                rows={5}
-                                className={`${styles.input} ${styles.textarea}`}
-                            />
-                        </div>
-                        <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <line x1="22" y1="2" x2="11" y2="13" />
-                                <polygon points="22,2 15,22 11,13 2,9" />
-                            </svg>
-                            Send Message
-                        </button>
-                    </form>
+                            <button
+                                type="submit"
+                                className={`btn btn-primary ${styles.submitBtn} ${status === 'submitting' ? styles.btnLoading : ''}`}
+                                disabled={status === 'submitting'}
+                            >
+                                {status === 'submitting' ? (
+                                    <>
+                                        <div className={styles.spinner}></div>
+                                        Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <line x1="22" y1="2" x2="11" y2="13" />
+                                            <polygon points="22,2 15,22 11,13 2,9" />
+                                        </svg>
+                                        Send Message
+                                    </>
+                                )}
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>

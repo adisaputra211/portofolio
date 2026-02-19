@@ -367,25 +367,45 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .bentoGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .imageCard,
+    .detailsCard,
+    .techCard,
+    .featuresCard,
+    .linksCard,
+    .headerCard {
+        grid-column: span 12 !important;
+        grid-row: auto !important;
+    }
+
+    .portraitGrid .imageCard {
+        min-height: 500px;
+    }
+
+    .featuresGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projectPage {
+        padding-top: 80px;
+    }
+
+    .title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .shortDesc {
+        font-size: 1rem;
+    }
+
     .imageCard {
-        grid-column: span 12;
-        grid-row: auto;
-    }
-
-    .detailsCard {
-        grid-column: span 12;
-    }
-
-    .techCard {
-        grid-column: span 12;
-    }
-
-    .featuresCard {
-        grid-column: span 12;
-    }
-
-    .linksCard {
-        grid-column: span 12;
+        min-height: 350px;
     }
 
     .featuresGrid {
@@ -393,12 +413,27 @@
     }
 }
 
-@media (max-width: 640px) {
-    .title {
-        font-size: 2rem;
+@media (max-width: 480px) {
+    .projectPage {
+        padding-bottom: 40px;
     }
 
     .bentoCard {
-        padding: 24px;
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .imageCard,
+    .imageWrapper {
+        min-height: 300px !important;
+    }
+
+    .visitBtn {
+        width: 100%;
+        justify-content: center;
     }
 }

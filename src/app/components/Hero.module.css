@@ -302,27 +302,37 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+        min-height: auto;
+    }
+
     .heroContent {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 40px;
+        gap: 48px;
     }
 
     .description {
         margin-left: auto;
         margin-right: auto;
+        font-size: 1rem;
     }
 
     .greeting {
         justify-content: center;
+        font-size: 1.1rem;
     }
 
     .actions {
         justify-content: center;
+        gap: 12px;
     }
 
     .stats {
         justify-content: center;
+        margin-top: 40px;
     }
 
     .heroVisual {
@@ -330,18 +340,51 @@
     }
 
     .codeWindow {
-        max-width: 340px;
+        max-width: 360px;
+    }
+
+    .codeBlock {
+        padding: 16px;
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-top: 120px;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
     .stats {
         flex-direction: column;
-        gap: 16px;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .stat {
+        text-align: center;
+        align-items: center;
+        max-width: 240px;
     }
 
     .statDivider {
-        width: 40px;
+        width: 60px;
         height: 1px;
+        background: rgba(59, 130, 246, 0.1);
+    }
+
+    .statNumber {
+        font-size: 1.1rem;
+    }
+
+    .statLabel {
+        font-size: 0.75rem;
+    }
+
+    .codeWindow {
+        max-width: 100%;
     }
 }

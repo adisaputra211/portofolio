@@ -130,12 +130,23 @@
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 16px 0;
+    }
+
+    .brandName {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
     .navLinks {
         display: none;
     }
 
     .hamburger {
         display: flex;
+        padding: 12px;
+        /* Increased hit area */
+        margin-right: -8px;
     }
 
     .mobileMenu {
@@ -148,8 +159,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(2, 6, 23, 0.97);
-        backdrop-filter: blur(20px);
+        background: rgba(2, 6, 23, 0.98);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         padding-top: 100px;
         opacity: 0;
         pointer-events: none;
@@ -164,13 +176,13 @@
 
     .mobileLink {
         font-family: var(--font-heading);
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         font-weight: 600;
         color: var(--neutral-200);
-        padding: 16px 32px;
+        padding: 14px 28px;
         border-radius: 12px;
         transition: all var(--transition-normal);
-        width: 80%;
+        width: 85%;
         text-align: center;
     }
 

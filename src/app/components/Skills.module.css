@@ -148,8 +148,33 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
     .categories {
         grid-template-columns: 1fr;
+    }
+
+    .category {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catHeader {
+        margin-bottom: 20px;
+    }
+
+    .catTitle {
+        font-size: 1.1rem;
+    }
+
+    .techBadge {
+        padding: 8px 18px;
+        font-size: 0.8rem;
     }
 }
