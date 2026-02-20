@@ -4,15 +4,15 @@ export const projects = [
         slug: 'iot-monitoring-system',
         orientation: 'landscape',
         images: ['/IoT2.jpeg', '/IoT1.jpeg', '/IoT3.jpeg'], // Placeholder for now
-        description: 'Sistem IoT penyiraman tanaman otomatis berbasis Fuzzy Logic dengan integrasi dashboard web real-time.',
+        description: 'Sistem IoT penyiraman tanaman otomatis berbasis Fuzzy Logic dengan integrasi dashboard web real time.',
         longDescription: `
-            Proyek ini merupakan sistem Internet of Things (IoT) untuk monitoring dan penyiraman tanaman otomatis berbasis ESP32. Sistem mengintegrasikan sensor kelembapan tanah dan sensor suhu serta kelembapan udara (DHT11) untuk mengumpulkan data kondisi lingkungan secara real-time.
+            Proyek ini merupakan sistem Internet of Things (IoT) untuk monitoring dan penyiraman tanaman otomatis berbasis ESP32. Sistem mengintegrasikan sensor kelembapan tanah dan sensor suhu serta kelembapan udara (DHT11) untuk mengumpulkan data kondisi lingkungan secara real time.
 
             Data yang diperoleh dari sensor diproses menggunakan metode Fuzzy Logic (Mamdani) untuk menentukan keputusan penyiraman yang lebih adaptif dan akurat dibandingkan metode threshold konvensional. Pendekatan ini memungkinkan sistem mempertimbangkan beberapa parameter sekaligus, seperti tingkat kelembapan tanah dan suhu udara, sebelum mengaktifkan pompa air.
 
-            ESP32 berperan sebagai mikrokontroler utama yang membaca data sensor, memproses logika fuzzy, dan mengontrol aktuator penyiraman. Sistem juga dirancang untuk dapat dimonitor melalui antarmuka berbasis web sehingga pengguna dapat melihat kondisi tanaman secara real-time.
+            ESP32 berperan sebagai mikrokontroler utama yang membaca data sensor, memproses logika fuzzy, dan mengontrol aktuator penyiraman. Sistem juga dirancang untuk dapat dimonitor melalui antarmuka berbasis web sehingga pengguna dapat melihat kondisi tanaman secara real time.
 
-Proyek ini bertujuan untuk meningkatkan efisiensi penggunaan air serta membantu perawatan tanaman secara otomatis dan lebih cerdas.`,
+            Proyek ini bertujuan untuk meningkatkan efisiensi penggunaan air serta membantu perawatan tanaman secara otomatis dan lebih cerdas.`,
 
         tags: ['C/C++', 'FastAPI', 'WebSocket', 'ESP32', 'Fuzzy Logic'],
         link: '#',
@@ -70,10 +70,7 @@ Proyek ini bertujuan untuk meningkatkan efisiensi penggunaan air serta membantu 
         images: ['/app1.jpeg', '/app2.jpeg', '/app3.jpeg'], // Placeholder
         description: 'Aplikasi produktivitas Task & Habit Tracker berbasis React Native yang dirancang untuk meningkatkan konsistensi dan manajemen aktivitas harian.',
         longDescription: `
-            Aplikasi mobile Task & Habit ini merupakan proyek pribadi yang bertujuan membantu pengguna
-            membangun kebiasaan positif dan mengelola tugas harian secara lebih terstruktur. Dibangun menggunakan React Native dan difokuskan untuk platform Android, aplikasi  ini menyediakan 
-            fitur pelacakan tugas dan kebiasaan dengan tampilan yang sederhana dan mudah digunakan 
-            untuk mendukung konsistensi pengguna.
+            Aplikasi mobile Task & Habit ini merupakan proyek pribadi yang bertujuan membantu pengguna membangun kebiasaan positif dan mengelola tugas harian secara lebih terstruktur. Dibangun menggunakan React Native dan difokuskan untuk platform Android, aplikasi  ini menyediakan fitur pelacakan tugas dan kebiasaan dengan tampilan yang sederhana dan mudah digunakan untuk mendukung konsistensi pengguna.
         `,
         tags: ['React Native', 'JavaScript', 'Vs Code', 'Expo Go'],
         link: '#',
@@ -98,12 +95,9 @@ Proyek ini bertujuan untuk meningkatkan efisiensi penggunaan air serta membantu 
         images: ['/mudiv1.png', '/mudiv2.png', '/mudiv3.png', '/mudiv4.png',], // Placeholder
         description: 'Desain landing page untuk platform Mudiv yang fokus pada estetika modern dan pengalaman pengguna yang intuitif.',
         longDescription: `
-            Proyek ini berfokus pada perancangan antarmuka (UI) dan pengalaman pengguna (UX) untuk website Mudiv. 
-            Desain dikembangkan melalui proses riset dan kolaborasi tim yang mendalam guna memahami kebutuhan pengguna, 
-            sehingga tercipta alur navigasi yang intuitif serta tampilan visual yang menarik.
+            Proyek ini berfokus pada perancangan antarmuka (UI) dan pengalaman pengguna (UX) untuk website Mudiv. Desain dikembangkan melalui proses riset dan kolaborasi tim yang mendalam guna memahami kebutuhan pengguna, sehingga tercipta alur navigasi yang intuitif serta tampilan visual yang menarik.
 
-            Prinsip desain yang diterapkan mengedepankan clean design, tipografi yang kuat, serta palet warna hijau yang harmonis 
-            untuk membangun identitas brand yang konsisten dan profesional.
+            Prinsip desain yang diterapkan mengedepankan clean design, tipografi yang kuat, serta palet warna hijau yang harmonis untuk membangun identitas brand yang konsisten dan profesional.
         `,
         tags: ['Figma', 'UI/UX', 'Landing Page', 'HTML/CSS'],
         link: '#',
@@ -127,15 +121,9 @@ Proyek ini bertujuan untuk meningkatkan efisiensi penggunaan air serta membantu 
         images: ['/ko1.png', '/ko2.png', '/ko3.png', '/ko4.png'], // Placeholder
         description: 'Pengembangan sistem informasi untuk lembaga pemerintahan DISKOMINFO menggunakan framework CodeIgniter 2.5 dengan fokus pada manajemen data.',
         longDescription: `
-            Pengembangan Website Resmi dan Sistem Informasi Internal Dinas Komunikasi dan 
-            Informatika (Diskominfo) merupakan sebuah sistem berbasis web yang dirancang 
-            untuk mendukung pelayanan informasi publik serta manajemen data internal 
-            organisasi secara terintegrasi.
+            Pengembangan Website Resmi dan Sistem Informasi Internal Dinas Komunikasi dan Informatika (Diskominfo) merupakan sebuah sistem berbasis web yang dirancang untuk mendukung pelayanan informasi publik serta manajemen data internal organisasi secara terintegrasi.
 
-            Sistem ini dibangun menggunakan PHP dengan Framework CodeIgniter versi 2.5 dan 
-            dijalankan pada lingkungan pengembangan XAMPP (Apache, MySQL, PHP). Website ini 
-            menggabungkan fungsi portal informasi publik dengan sistem administrasi internal
-            berbasis dashboard untuk meningkatkan efisiensi pengelolaan data dan transparansi layanan.    
+            Sistem ini dibangun menggunakan PHP dengan Framework CodeIgniter versi 2.5 dan dijalankan pada lingkungan pengembangan XAMPP (Apache, MySQL, PHP). Website ini menggabungkan fungsi portal informasi publik dengan sistem administrasi internalberbasis dashboard untuk meningkatkan efisiensi pengelolaan data dan transparansi layanan.    
         `,
         tags: ['CodeIgniter 2.5', 'PHP', 'MySQL', 'Bootstrap'],
         link: '#',

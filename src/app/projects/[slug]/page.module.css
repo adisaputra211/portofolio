@@ -104,6 +104,7 @@
     color: var(--neutral-300);
     max-width: 800px;
     margin-bottom: 24px;
+    text-align: justify;
 }
 
 .tagList {
@@ -288,6 +289,7 @@
     line-height: 1.7;
     font-size: 0.95rem;
     white-space: pre-line;
+    text-align: justify;
 }
 
 /* Tech Stack Card - Spans 4 to match Links card */
