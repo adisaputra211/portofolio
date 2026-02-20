@@ -76,7 +76,7 @@ export default function About() {
                             and IoT integration, I enjoy building responsive and efficient digital solutions
                             that connect software and hardware technologies. My background in hardware support
                             gives me a strong foundation in troubleshooting, system diagnostics, and understanding
-                            the physical layer of technology from component-level issues to full system integration.
+                            the physical layer of technology from component level issues to full system integration.
                         </p>
                         <p className={`${styles.bio} animate-on-scroll delay-3`}>
                             Passionate about continuous learning and emerging technologies
