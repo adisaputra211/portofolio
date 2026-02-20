@@ -6,7 +6,6 @@
     position: relative;
     overflow: hidden;
     background: var(--gradient-hero);
-    padding-top: 60px;
 }
 
 /* Background Orbs */
@@ -300,8 +299,6 @@
 /* Responsive */
 @media (max-width: 900px) {
     .hero {
-        padding-top: 100px;
-        padding-bottom: 60px;
         min-height: auto;
     }
 
@@ -347,11 +344,6 @@
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding-top: 100px;
-        padding-bottom: 40px;
-    }
-
     .name {
         font-size: 2.2rem;
         margin-bottom: 12px;

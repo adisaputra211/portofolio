@@ -1,7 +1,7 @@
 .footer {
     background: var(--neutral-950);
     border-top: 1px solid rgba(59, 130, 246, 0.1);
-    padding: 48px 0 24px;
+    padding: var(--section-padding-y-mobile) 0 24px;
 }
 
 .footerContent {

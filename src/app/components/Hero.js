@@ -13,7 +13,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section id="hero" className={styles.hero}>
+        <section id="hero" className={`section section-first ${styles.hero}`}>
             {/* Animated background elements */}
             <div className={styles.bgOrbs}>
                 <div className={styles.orb1}></div>
