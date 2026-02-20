@@ -28,7 +28,8 @@
     position: relative;
     padding: 32px;
     overflow: hidden;
-    transition: all var(--transition-slow);
+    transition: opacity var(--transition-slow), transform var(--transition-slow), border-color var(--transition-slow), box-shadow var(--transition-slow);
+    will-change: transform, border-color, box-shadow;
 }
 
 /* Sizing variations - base 6 columns */
@@ -44,6 +45,7 @@
     transform: translateY(-5px);
     border-color: rgba(var(--accent-color-rgb), 0.4);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    transition-delay: 0s !important;
 }
 
 .catHeader {
@@ -63,13 +65,14 @@
     border: 1px solid color-mix(in srgb, var(--accent-color) 25%, transparent);
     border-radius: 12px;
     color: var(--accent-color);
-    transition: all var(--transition-normal);
+    transition: transform var(--transition-normal), background var(--transition-normal), color var(--transition-normal);
 }
 
 .category:hover .catIcon {
     transform: scale(1.1) rotate(5deg);
     background: var(--accent-color);
     color: white;
+    transition-delay: 0s !important;
 }
 
 .catTitle {
@@ -93,7 +96,7 @@
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--neutral-300);
-    transition: all var(--transition-normal);
+    transition: border-color var(--transition-normal), background var(--transition-normal), color var(--transition-normal);
 }
 
 .category:hover .skillBadge {
@@ -105,6 +108,7 @@
     border-color: var(--accent-color) !important;
     color: white !important;
     transform: translateY(-2px);
+    transition-delay: 0s !important;
 }
 
 /* Decorative Card Glow */
@@ -119,10 +123,12 @@
     filter: blur(40px);
     pointer-events: none;
     transition: opacity var(--transition-normal);
+    will-change: opacity;
 }
 
 .category:hover .cardGlow {
     opacity: 0.15;
+    transition-delay: 0s !important;
 }
 
 /* Tech Marquee */
@@ -156,7 +162,7 @@
     font-weight: 500;
     color: var(--neutral-300);
     white-space: nowrap;
-    transition: all var(--transition-normal);
+    transition: background var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal);
 }
 
 .techBadge:hover {
@@ -200,7 +206,7 @@
 
 @media (max-width: 480px) {
     .catHeader {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .catTitle {
@@ -208,7 +214,7 @@
     }
 
     .techBadge {
-        padding: 8px 18px;
-        font-size: 0.8rem;
+        padding: 6px 14px;
+        font-size: 0.75rem;
     }
 }

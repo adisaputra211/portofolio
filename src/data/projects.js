@@ -91,4 +91,67 @@ Proyek ini bertujuan untuk meningkatkan efisiensi penggunaan air serta membantu 
             'Task & Habit Management Logic'
         ]
     },
+    {
+        title: 'Website Design Mudiv',
+        slug: 'mudiv-uiux',
+        orientation: 'landscape',
+        images: ['/mudiv1.png', '/mudiv2.png', '/mudiv3.png', '/mudiv4.png',], // Placeholder
+        description: 'Desain landing page untuk platform Mudiv yang fokus pada estetika modern dan pengalaman pengguna yang intuitif.',
+        longDescription: `
+            Proyek ini berfokus pada perancangan antarmuka (UI) dan pengalaman pengguna (UX) untuk website Mudiv. 
+            Desain dikembangkan melalui proses riset dan kolaborasi tim yang mendalam guna memahami kebutuhan pengguna, 
+            sehingga tercipta alur navigasi yang intuitif serta tampilan visual yang menarik.
+
+            Prinsip desain yang diterapkan mengedepankan clean design, tipografi yang kuat, serta palet warna hijau yang harmonis 
+            untuk membangun identitas brand yang konsisten dan profesional.
+        `,
+        tags: ['Figma', 'UI/UX', 'Landing Page', 'HTML/CSS'],
+        link: '#',
+        color: '#f43f5e',
+        features: [
+            'Desain Modern & Responsif',
+            'Prototipe Interaktif',
+            'Sistem Desain Terstruktur',
+            'Riset Pengalaman Pengguna (UX)'
+        ],
+        technologies: [
+            'Figma',
+            'User Centered Design',
+            'Visual Branding'
+        ]
+    },
+    {
+        title: 'Website Diskominfo',
+        slug: 'diskominfo-website',
+        orientation: 'landscape',
+        images: ['/ko1.png', '/ko2.png', '/ko3.png', '/ko4.png'], // Placeholder
+        description: 'Pengembangan sistem informasi untuk lembaga pemerintahan DISKOMINFO menggunakan framework CodeIgniter 2.5 dengan fokus pada manajemen data.',
+        longDescription: `
+            Pengembangan Website Resmi dan Sistem Informasi Internal Dinas Komunikasi dan 
+            Informatika (Diskominfo) merupakan sebuah sistem berbasis web yang dirancang 
+            untuk mendukung pelayanan informasi publik serta manajemen data internal 
+            organisasi secara terintegrasi.
+
+            Sistem ini dibangun menggunakan PHP dengan Framework CodeIgniter versi 2.5 dan 
+            dijalankan pada lingkungan pengembangan XAMPP (Apache, MySQL, PHP). Website ini 
+            menggabungkan fungsi portal informasi publik dengan sistem administrasi internal
+            berbasis dashboard untuk meningkatkan efisiensi pengelolaan data dan transparansi layanan.    
+        `,
+        tags: ['CodeIgniter 2.5', 'PHP', 'MySQL', 'Bootstrap'],
+        link: '#',
+        color: '#10b981',
+        features: [
+            'Manajemen User & Role',
+            'Form Pengajuan Kebutuhan Desa',
+            'Manajemen Inventaris Otomatis',
+            'Optimasi Database'
+        ],
+        technologies: [
+            'CodeIgniter 2.5',
+            'PHP',
+            'MySQL',
+            'Bootstrap 3',
+            'XAMPP'
+        ]
+    },
 ];
