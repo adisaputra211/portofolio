@@ -42,10 +42,19 @@ const experience = [
 ];
 
 const skills = [
-    { name: 'Frontend', items: ['Next.js', 'React', 'HTML/CSS', 'JavaScript'] },
-    { name: 'IoT', items: ['Arduino', 'ESP32', 'Sensor Integration', 'WebSocket'] },
-    { name: 'Hardware', items: ['Laptop Maintenance', 'Troubleshooting', 'Windows OS', 'Networking'] },
-    { name: 'Tools', items: ['Git', 'VS Code', 'Figma', 'AI', 'SQL', 'Canva'] },
+    { name: 'Frontend', items: ['Next.js', 'React', 'HTML/CSS', 'JavaScript', 'Tailwind CSS'] },
+    {
+        name: 'IoT', items: ['Arduino', 'ESP32', 'Sensor Integration', 'Hardware Troubleshooting',
+            'MQTT', 'Websocket']
+    },
+    {
+        name: 'Hardware', items: ['Laptop Maintenance', 'OS Installation', 'Networking',
+            'Hardware Troubleshooting', 'Software Installation']
+    },
+    {
+        name: 'Tools', items: ['Git', 'VS Code', 'AI', 'XAMPP', 'Canva', 'MS Office',
+            'Adobe Premiere Pro', 'Filmora', 'Adobe Illustrator', 'Cloudflared', 'Expo Go', 'Vercel']
+    },
 ];
 
 export default function AboutPage() {

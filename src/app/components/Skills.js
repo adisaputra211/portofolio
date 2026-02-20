@@ -24,7 +24,7 @@ const skillCategories = [
                 <rect x="12" y="19" width="8" height="2" />
             </svg>
         ),
-        skills: ['FastAPI', 'Python', 'SQL', 'SQLite', 'Flask'],
+        skills: ['FastAPI', 'Python', 'SQL', 'SQLite', 'Flask', 'Mysql', 'Websocket'],
     },
     {
         title: 'IoT & System',
@@ -38,7 +38,7 @@ const skillCategories = [
                 <circle cx="6" cy="18" r="1" />
             </svg>
         ),
-        skills: ['ESP32', 'WebSocket', 'Sensor Integration', 'Arduino', 'Troubleshooting'],
+        skills: ['ESP32', 'Sensor Integration', 'Arduino', 'Hardware Troubleshooting', 'MQTT'],
     },
     {
         title: 'Creative Design',
@@ -50,7 +50,7 @@ const skillCategories = [
                 <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
             </svg>
         ),
-        skills: ['Canva', 'Banner Design', 'Content Editing', 'Adobe Premiere', 'Filmora'],
+        skills: ['Banner & Poster Design', 'Content Editing', 'Video Editing', 'Flyer & Brochure Design'],
     },
     {
         title: 'DevOps & Tools',
@@ -62,7 +62,8 @@ const skillCategories = [
                 <circle cx="12" cy="12" r="10" />
             </svg>
         ),
-        skills: ['Git / GitHub', 'Cloudflared', 'Expo Go', 'Vercel', 'VS Code'],
+        skills: ['GitHub', 'Cloudflared', 'Expo Go', 'Vercel', 'VS Code', 'MS Office',
+            'Canva', 'Adobe Premiere', 'Adobe Illustrator', 'XAMPP', 'AI', 'Filmora'],
     },
     {
         title: 'Hardware & IT Support',
@@ -75,7 +76,8 @@ const skillCategories = [
                 <line x1="12" y1="17" x2="12" y2="20" />
             </svg>
         ),
-        skills: ['Hardware Troubleshooting', 'OS Installation', 'Laptop Maintenance', 'Networking'],
+        skills: ['Hardware Troubleshooting', 'OS Installation', 'Laptop Maintenance',
+            'Networking', 'Software Installation'],
     },
     {
         title: 'Artificial Intelligence',
@@ -93,10 +95,10 @@ const skillCategories = [
 ];
 
 const techLogos = [
-    'React', 'Next.js', 'JavaScript', 'TypeScript',
-    'Python', 'ArduinoIDE', 'Git', 'Cloudflared',
-    'SQL', 'Canva', 'IoT', 'ESP32', 'Expo Go',
-    'AI', 'LLM', 'Analysis', 'Quality Assurance', 'Os Installation', 'Hardware Troubleshooting'
+    'React', 'Next.js', 'JavaScript', 'TypeScript', 'SQL', 'Mysql',
+    'Python', 'Arduino IDE', 'Git', 'Cloudflared',
+    'SQL', 'Canva', 'IoT', 'ESP32', 'Expo Go', 'Vercel', 'Data Analys',
+    'Artificial Intelligence', 'LLM', 'Data Entry', 'Quality Assurance', 'OS Installation',
 ];
 
 export default function Skills() {
