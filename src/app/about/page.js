@@ -106,7 +106,7 @@ export default function AboutPage() {
 
                 {/* ── HERO PROFILE ── */}
                 <section className={`${styles.hero} ${styles.reveal}`} ref={addRef}>
-                    <div className={styles.heroImage}>
+                    <div className={`${styles.heroImage} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '0.1s' }}>
                         <Image
                             src="/profil (2).jpeg"
                             alt="Profile Photo"
@@ -117,15 +117,15 @@ export default function AboutPage() {
                         <div className={styles.heroImageGlow} />
                     </div>
                     <div className={styles.heroInfo}>
-                        <span className={styles.heroLabel}>About Me</span>
-                        <h1 className={styles.heroName}>Adi Saputra</h1>
-                        <p className={styles.heroTitle}>Bachelor of Computer Science · Web Developer · IoT Enthusiast</p>
-                        <div className={styles.heroBadges}>
+                        <span className={`${styles.heroLabel} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '200ms' }}>About Me</span>
+                        <h1 className={`${styles.heroName} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '300ms' }}>Adi Saputra</h1>
+                        <p className={`${styles.heroTitle} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '400ms' }}>Bachelor of Computer Science · Web Developer · IoT Enthusiast</p>
+                        <div className={`${styles.heroBadges} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '500ms' }}>
                             <span className={styles.badge}>🎓 S1 Teknologi Informasi</span>
                             <span className={styles.badge}>💼 Available for Hire</span>
                             <span className={styles.badge}>🌍 Magelang, Indonesia</span>
                         </div>
-                        <p className={styles.heroBio}>
+                        <p className={`${styles.heroBio} ${styles.reveal} ${styles.revealFade}`} ref={addRef} style={{ transitionDelay: '600ms' }}>
                             I&apos;m Bachelor of Computer Science with experience in web development,
                             IoT systems, and hardware support. Skilled in Next.js, basic backend frameworks,
                             and IoT integration, I enjoy building responsive and efficient digital solutions
@@ -133,12 +133,12 @@ export default function AboutPage() {
                             gives me a strong foundation in troubleshooting, system diagnostics, and understanding
                             the physical layer of technology from component-level issues to full system integration.
                         </p>
-                        <p className={styles.heroBio}>
+                        <p className={`${styles.heroBio} ${styles.reveal} ${styles.revealFade}`} ref={addRef} style={{ transitionDelay: '700ms' }}>
                             Passionate about continuous learning and emerging technologies
                             particularly Artificial Intelligence I am committed to growing as a
                             developer in dynamic and innovative environments.
                         </p>
-                        <p className={styles.heroBio}>
+                        <p className={`${styles.heroBio} ${styles.reveal} ${styles.revealFade}`} ref={addRef} style={{ transitionDelay: '800ms' }}>
                             Beyond academic and project experience, I continuously explore Artificial
                             Intelligence and Large Language Model (LLM) concepts through self learning
                             and independent experimentation. I also have a growing interest in Data Analysis
@@ -146,12 +146,12 @@ export default function AboutPage() {
                             Additionally, I possess basic content editing skills that help me present technical
                             information clearly and effectively.
                         </p>
-                        <div className={styles.heroContact}>
+                        <div className={`${styles.heroContact} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '900ms' }}>
                             <a href="mailto:adisaputra1523@gmail.com" className={styles.contactChip}>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2" /><polyline points="22,4 12,13 2,4" /></svg>
                                 adisaputra1523@gmail.com
                             </a>
-                            <a href="tel:+6285786303017" className={styles.contactChip}>
+                            <a href="https://wa.me/6285786303017" className={styles.contactChip}>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                                 +62 857 8630 3017
                             </a>
@@ -171,7 +171,7 @@ export default function AboutPage() {
                                 key={group.name}
                                 className={`${styles.skillGroup} ${styles.reveal}`}
                                 ref={addRef}
-                                style={{ transitionDelay: `${i * 80}ms` }}
+                                style={{ transitionDelay: `${(i + 1) * 150}ms` }}
                             >
                                 <h3 className={styles.skillGroupName}>{group.name}</h3>
                                 <div className={styles.skillTags}>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                                 key={i}
                                 className={`${styles.timelineItem} ${styles.reveal}`}
                                 ref={addRef}
-                                style={{ transitionDelay: `${i * 100}ms` }}
+                                style={{ transitionDelay: `${(i + 1) * 200}ms` }}
                             >
                                 <div className={styles.timelineIcon}>{edu.icon}</div>
                                 <div className={styles.timelineContent}>
@@ -226,7 +226,7 @@ export default function AboutPage() {
                                 key={i}
                                 className={`${styles.timelineItem} ${styles.reveal}`}
                                 ref={addRef}
-                                style={{ transitionDelay: `${i * 100}ms` }}
+                                style={{ transitionDelay: `${(i + 1) * 200}ms` }}
                             >
                                 <div className={styles.timelineIcon}>{exp.icon}</div>
                                 <div className={styles.timelineContent}>

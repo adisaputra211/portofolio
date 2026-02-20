@@ -80,7 +80,7 @@ export default function ProjectSlider({ images, title, color, orientation }) {
 
                 {images.length > 1 && (
                     <>
-                        <div className={styles.sliderNav}>
+                        <div className={`${styles.sliderNav} animate-on-scroll delay-2`}>
                             <button onClick={(e) => { e.stopPropagation(); prevSlide(); }} className={styles.navBtn} aria-label="Previous slide">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <polyline points="15 18 9 12 15 6"></polyline>
@@ -93,7 +93,7 @@ export default function ProjectSlider({ images, title, color, orientation }) {
                             </button>
                         </div>
 
-                        <div className={styles.sliderDots}>
+                        <div className={`${styles.sliderDots} animate-on-scroll delay-3`}>
                             {images.map((_, index) => (
                                 <button
                                     key={index}

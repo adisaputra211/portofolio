@@ -22,12 +22,12 @@ export default function ProjectContent({ project }) {
 
             <div className={`${styles.bentoGrid} ${project.orientation === 'portrait' ? styles.portraitGrid : ''}`}>
                 {/* Header Card */}
-                <div className={`${styles.bentoCard} ${styles.headerCard} animate-on-scroll delay-1`}>
-                    <h1 className={styles.title}>{project.title}</h1>
-                    <p className={styles.shortDesc}>{project.description}</p>
-                    <div className={styles.tagList}>
-                        {project.tags.map((tag) => (
-                            <span key={tag} className={styles.tag} style={{ color: project.color, borderColor: `${project.color}40`, background: `${project.color}10` }}>
+                <div className={`${styles.bentoCard} ${styles.headerCard} animate-on-scroll`}>
+                    <h1 className={`${styles.title} animate-on-scroll delay-1`}>{project.title}</h1>
+                    <p className={`${styles.shortDesc} animate-on-scroll animate-only-fade delay-2`}>{project.description}</p>
+                    <div className={`${styles.tagList} animate-on-scroll delay-3`}>
+                        {project.tags.map((tag, idx) => (
+                            <span key={tag} className={`${styles.tag} animate-on-scroll delay-${idx + 4}`} style={{ color: project.color, borderColor: `${project.color}40`, background: `${project.color}10` }}>
                                 {tag}
                             </span>
                         ))}
@@ -43,8 +43,8 @@ export default function ProjectContent({ project }) {
                 />
 
                 {/* Details Card */}
-                <div className={`${styles.bentoCard} ${styles.detailsCard} animate-on-scroll delay-3`}>
-                    <div className={styles.cardHeader}>
+                <div className={`${styles.bentoCard} ${styles.detailsCard} animate-on-scroll`}>
+                    <div className={`${styles.cardHeader} animate-on-scroll delay-1`}>
                         <div className={styles.iconBox} style={{ color: project.color, background: `${project.color}15` }}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -56,12 +56,12 @@ export default function ProjectContent({ project }) {
                         </div>
                         <h3 className={styles.cardTitle}>Overview</h3>
                     </div>
-                    <p className={styles.longDesc}>{project.longDescription || project.description}</p>
+                    <p className={`${styles.longDesc} animate-on-scroll animate-only-fade delay-2`}>{project.longDescription || project.description}</p>
                 </div>
 
                 {/* Tech Stack Card */}
-                <div className={`${styles.bentoCard} ${styles.techCard} animate-on-scroll delay-4`}>
-                    <div className={styles.cardHeader}>
+                <div className={`${styles.bentoCard} ${styles.techCard} animate-on-scroll`}>
+                    <div className={`${styles.cardHeader} animate-on-scroll delay-1`}>
                         <div className={styles.iconBox} style={{ color: project.color, background: `${project.color}15` }}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <polyline points="16 18 22 12 16 6"></polyline>
@@ -70,16 +70,16 @@ export default function ProjectContent({ project }) {
                         </div>
                         <h3 className={styles.cardTitle}>Tech Stack</h3>
                     </div>
-                    <div className={styles.techGrid}>
+                    <div className={`${styles.techGrid} animate-on-scroll delay-2`}>
                         {project.technologies ? (
                             project.technologies.map((tech, index) => (
-                                <span key={index} className={styles.techBadge}>
+                                <span key={index} className={`${styles.techBadge} animate-on-scroll delay-${(index % 4) + 2}`}>
                                     {tech}
                                 </span>
                             ))
                         ) : (
                             project.tags.map((tag, index) => (
-                                <span key={index} className={styles.techBadge}>
+                                <span key={index} className={`${styles.techBadge} animate-on-scroll delay-${(index % 4) + 2}`}>
                                     {tag}
                                 </span>
                             ))
@@ -89,8 +89,8 @@ export default function ProjectContent({ project }) {
 
                 {/* Features Card */}
                 {project.features && (
-                    <div className={`${styles.bentoCard} ${styles.featuresCard} animate-on-scroll delay-5`}>
-                        <div className={styles.cardHeader}>
+                    <div className={`${styles.bentoCard} ${styles.featuresCard} animate-on-scroll`}>
+                        <div className={`${styles.cardHeader} animate-on-scroll delay-1`}>
                             <div className={styles.iconBox} style={{ color: project.color, background: `${project.color}15` }}>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -100,7 +100,7 @@ export default function ProjectContent({ project }) {
                         </div>
                         <div className={styles.featuresGrid}>
                             {project.features.map((feature, index) => (
-                                <div key={index} className={styles.featureItem}>
+                                <div key={index} className={`${styles.featureItem} animate-on-scroll delay-${(index % 3) + 2}`}>
                                     <svg className={styles.featureIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={project.color} strokeWidth="2">
                                         <polyline points="20 6 9 17 4 12"></polyline>
                                     </svg>
@@ -112,14 +112,14 @@ export default function ProjectContent({ project }) {
                 )}
 
                 {/* Links Card */}
-                <div className={`${styles.bentoCard} ${styles.linksCard} animate-on-scroll delay-6`}>
-                    <h3 className={styles.cardTitle} style={{ marginBottom: '8px' }}>Ready to see it?</h3>
-                    <p style={{ color: 'var(--neutral-400)', fontSize: '0.9rem' }}>Explore the live project or source code.</p>
+                <div className={`${styles.bentoCard} ${styles.linksCard} animate-on-scroll`}>
+                    <h3 className={`${styles.cardTitle} animate-on-scroll delay-1`} style={{ marginBottom: '8px' }}>Ready to see it?</h3>
+                    <p className="animate-on-scroll delay-2" style={{ color: 'var(--neutral-400)', fontSize: '0.9rem' }}>Explore the live project or source code.</p>
                     <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={styles.visitBtn}
+                        className={`${styles.visitBtn} animate-on-scroll delay-3`}
                     >
                         Visit Project
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

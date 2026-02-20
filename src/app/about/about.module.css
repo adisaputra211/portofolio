@@ -8,14 +8,14 @@
     padding: 32px 0 100px;
     position: relative;
     /* Removed overflow-x: hidden to avoid potential scroll conflicts */
-    animation: pageReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: pageReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes pageReveal {
     from {
         opacity: 0;
-        transform: translateY(30px) scale(0.98);
-        filter: blur(10px);
+        transform: translateY(20px) scale(0.98);
+        filter: blur(8px);
     }
 
     to {
@@ -33,9 +33,9 @@
     width: 420px;
     height: 420px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.13) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
     pointer-events: none;
-    animation: orbFloat 8s ease-in-out infinite alternate;
+    animation: orbFloat 15s ease-in-out infinite alternate;
 }
 
 .orb2 {
@@ -45,9 +45,9 @@
     width: 380px;
     height: 380px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
     pointer-events: none;
-    animation: orbFloat 10s ease-in-out infinite alternate-reverse;
+    animation: orbFloat 20s ease-in-out infinite alternate-reverse;
 }
 
 .orb3 {
@@ -57,9 +57,9 @@
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
     pointer-events: none;
-    animation: orbFloat 12s ease-in-out infinite alternate;
+    animation: orbFloat 25s ease-in-out infinite alternate;
 }
 
 @keyframes orbFloat {
@@ -77,14 +77,20 @@
 ══════════════════════════════════════════ */
 .reveal {
     opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(20px) scale(0.97);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.revealFade {
+    transform: translateY(0) scale(1) !important;
 }
 
 .reveal.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 /* ══════════════════════════════════════════
