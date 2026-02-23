@@ -34,7 +34,7 @@ const experience = [
     {
         role: 'Freelance',
         company: 'My Company',
-        period: 'Agustus 2023 – Now',
+        period: 'Agustus 2043 – Now',
         description: 'Melakukan instalasi ulang OS, troubleshooting, penggantian komponen laptop, dan perawatan perangkat untuk menjaga performa optimal.',
         tags: ['Hardware', 'OS', 'Troubleshooting'],
         icon: '💼',
@@ -108,17 +108,17 @@ export default function AboutPage() {
                 <section className={`${styles.hero} ${styles.reveal}`} ref={addRef}>
                     <div className={`${styles.heroImage} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '0.1s' }}>
                         <Image
-                            src="/profil (2).jpeg"
+                            src="/Profil2.png"
                             alt="Profile Photo"
                             fill
-                            style={{ objectFit: 'cover' }}
+                            style={{ objectFit: 'cover', objectPosition: 'top' }}
                             priority
                         />
                         <div className={styles.heroImageGlow} />
                     </div>
                     <div className={styles.heroInfo}>
                         <span className={`${styles.heroLabel} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '200ms' }}>About Me</span>
-                        <h1 className={`${styles.heroName} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '300ms' }}>Adi Saputra</h1>
+                        <h1 className={`${styles.heroName} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '300ms' }}>Nur Cahyo Adi Saputra</h1>
                         <p className={`${styles.heroTitle} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '400ms' }}>Bachelor of Computer Science · Web Developer · IoT Enthusiast</p>
                         <div className={`${styles.heroBadges} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '500ms' }}>
                             <span className={styles.badge}>🎓 S1 Teknologi Informasi</span>

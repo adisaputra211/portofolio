@@ -19,10 +19,10 @@ export default function About() {
                         <div className={styles.profileFrame}>
                             <div className={styles.profileImage}>
                                 <Image
-                                    src="/profil (2).jpeg"
+                                    src="/Profil2.png"
                                     alt="Profile Photo"
                                     fill
-                                    style={{ objectFit: 'cover' }}
+                                    style={{ objectFit: 'cover', objectPosition: 'top' }}
                                     priority
                                 />
                             </div>

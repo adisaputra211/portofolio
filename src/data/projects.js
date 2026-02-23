@@ -6,13 +6,11 @@ export const projects = [
         images: ['/IoT2.jpeg', '/IoT1.jpeg', '/IoT3.jpeg'], // Placeholder for now
         description: 'Sistem IoT penyiraman tanaman otomatis berbasis Fuzzy Logic dengan integrasi dashboard web real time.',
         longDescription: `
-            Proyek ini merupakan sistem Internet of Things (IoT) untuk monitoring dan penyiraman tanaman otomatis berbasis ESP32. Sistem mengintegrasikan sensor kelembapan tanah dan sensor suhu serta kelembapan udara (DHT11) untuk mengumpulkan data kondisi lingkungan secara real time.
+            Sistem Internet of Things (IoT) untuk monitoring dan penyiraman tanaman otomatis berbasis ESP32 yang dirancang untuk meningkatkan efisiensi penggunaan air serta mendukung perawatan tanaman secara cerdas.
 
-            Data yang diperoleh dari sensor diproses menggunakan metode Fuzzy Logic (Mamdani) untuk menentukan keputusan penyiraman yang lebih adaptif dan akurat dibandingkan metode threshold konvensional. Pendekatan ini memungkinkan sistem mempertimbangkan beberapa parameter sekaligus, seperti tingkat kelembapan tanah dan suhu udara, sebelum mengaktifkan pompa air.
+            Sistem ini mengintegrasikan sensor kelembapan tanah dan sensor suhu–kelembapan udara (DHT11) untuk mengumpulkan data lingkungan secara real-time. Data tersebut diproses menggunakan metode Fuzzy Logic (Mamdani) sehingga keputusan penyiraman dapat dilakukan secara adaptif dengan mempertimbangkan beberapa parameter sekaligus, bukan hanya berdasarkan satu nilai ambang (threshold).
 
-            ESP32 berperan sebagai mikrokontroler utama yang membaca data sensor, memproses logika fuzzy, dan mengontrol aktuator penyiraman. Sistem juga dirancang untuk dapat dimonitor melalui antarmuka berbasis web sehingga pengguna dapat melihat kondisi tanaman secara real time.
-
-            Proyek ini bertujuan untuk meningkatkan efisiensi penggunaan air serta membantu perawatan tanaman secara otomatis dan lebih cerdas.`,
+            ESP32 berperan sebagai pusat kendali yang menangani pembacaan sensor, proses inferensi fuzzy, serta kontrol pompa air. Arsitektur sistem juga mendukung pemantauan berbasis web untuk menampilkan kondisi tanaman secara real time.`,
 
         tags: ['C/C++', 'FastAPI', 'WebSocket', 'ESP32', 'Fuzzy Logic'],
         link: '#',
@@ -31,7 +29,10 @@ export const projects = [
             'HTML/CSS For UI Website',
             'Monitoring Data',
             'Use Fuzzy Logic for Accurate Decision'
-        ]
+        ],
+        role: 'Full Stack Developer',
+        category: 'IOT & Automation',
+        timeline: '2024 (3 Months)'
     },
     {
         title: 'Portofolio Website',
@@ -40,9 +41,11 @@ export const projects = [
         images: ['/porto.png'], // Placeholder
         description: 'Membangun situs web portofolio responsif menggunakan Next.js dan JavaScript, dioptimalkan untuk kinerja dan pengalaman pengguna.',
         longDescription: `
-        Website portofolio ini dibangun menggunakan Next.js dan React dengan pendekatan modern untuk menghasilkan performa yang optimal serta struktur aplikasi yang terorganisir dengan baik. Styling responsif berbasis CSS diterapkan dengan prinsip mobile first untuk memastikan tampilan yang konsisten dan nyaman di berbagai perangkat. Animasi scroll diimplementasikan menggunakan Intersection Observer guna menciptakan efek reveal yang ringan, halus, dan tetap menjaga efisiensi performa.
-        
-        Struktur komponen yang modular memudahkan pengembangan dan pemeliharaan kode, serta meningkatkan skalabilitas proyek. Website ini di-deploy melalui Vercel untuk memastikan stabilitas, kemudahan deployment, dan performa yang andal dalam lingkungan production.  `,
+            Website portofolio ini dikembangkan menggunakan Next.js dan React dengan pendekatan modern untuk menghasilkan performa yang optimal serta arsitektur aplikasi yang terstruktur dan scalable.
+
+            Implementasi desain responsif berbasis CSS dengan prinsip mobile-first memastikan tampilan yang konsisten dan nyaman di berbagai perangkat. Animasi scroll memanfaatkan Intersection Observer API untuk menciptakan efek reveal yang ringan dan efisien tanpa membebani performa aplikasi.
+
+            Struktur komponen yang modular dirancang untuk meningkatkan maintainability dan memudahkan pengembangan fitur di masa mendatang. Proyek ini di-deploy menggunakan Vercel guna memastikan proses deployment yang stabil, cepat, dan production-ready.`,
         tags: ['Next.js', 'JavaScript', 'Vs Code', 'Framer Motion'],
         link: '#',
         color: '#06b6d4',
@@ -61,7 +64,10 @@ export const projects = [
             'Vercel Hosting',
             'java script',
             'ESLint',
-        ]
+        ],
+        role: 'Frontend Developer',
+        category: 'Portfolio Web',
+        timeline: '2024'
     },
     {
         title: 'App Build',
@@ -70,8 +76,11 @@ export const projects = [
         images: ['/app1.jpeg', '/app2.jpeg', '/app3.jpeg'], // Placeholder
         description: 'Aplikasi produktivitas Task & Habit Tracker berbasis React Native yang dirancang untuk meningkatkan konsistensi dan manajemen aktivitas harian.',
         longDescription: `
-            Aplikasi mobile Task & Habit ini merupakan proyek pribadi yang bertujuan membantu pengguna membangun kebiasaan positif dan mengelola tugas harian secara lebih terstruktur. Dibangun menggunakan React Native dan difokuskan untuk platform Android, aplikasi  ini menyediakan fitur pelacakan tugas dan kebiasaan dengan tampilan yang sederhana dan mudah digunakan untuk mendukung konsistensi pengguna.
-        `,
+            Task & Habit merupakan aplikasi mobile berbasis Android yang dikembangkan sebagai proyek pribadi untuk membantu pengguna membangun kebiasaan positif dan mengelola tugas harian secara lebih terstruktur.
+
+Aplikasi ini dirancang dengan pendekatan sederhana dan intuitif agar pengguna dapat fokus pada konsistensi tanpa distraksi. Fitur pelacakan tugas dan kebiasaan dilengkapi dengan sistem pemantauan progres untuk memberikan gambaran perkembangan secara jelas. Selain itu, aplikasi juga menyertakan elemen motivasional guna meningkatkan engagement dan mempertahankan kebiasaan jangka panjang.
+
+Proyek ini menitikberatkan pada clean user experience, performa yang ringan, serta manajemen data lokal yang efisien untuk memastikan aplikasi tetap responsif dan stabil dalam penggunaan sehari-hari.`,
         tags: ['React Native', 'JavaScript', 'Vs Code', 'Expo Go'],
         link: '#',
         color: '#8b5cf6',
@@ -86,7 +95,10 @@ export const projects = [
             'Expo Go',
             'Local Storage',
             'Task & Habit Management Logic'
-        ]
+        ],
+        role: 'Mobile Developer',
+        category: 'Productivity App',
+        timeline: '2023 - 2024'
     },
     {
         title: 'Website Design Mudiv',
@@ -95,10 +107,11 @@ export const projects = [
         images: ['/mudiv1.png', '/mudiv2.png', '/mudiv3.png', '/mudiv4.png',], // Placeholder
         description: 'Desain landing page untuk platform Mudiv yang fokus pada estetika modern dan pengalaman pengguna yang intuitif.',
         longDescription: `
-            Proyek ini berfokus pada perancangan antarmuka (UI) dan pengalaman pengguna (UX) untuk website Mudiv. Desain dikembangkan melalui proses riset dan kolaborasi tim yang mendalam guna memahami kebutuhan pengguna, sehingga tercipta alur navigasi yang intuitif serta tampilan visual yang menarik.
+            Proyek ini berfokus pada perancangan antarmuka (UI) dan pengalaman pengguna (UX) untuk website Mudiv dengan pendekatan User-Centered Design. Proses desain dilakukan melalui riset kebutuhan pengguna, analisis alur interaksi, serta kolaborasi tim untuk memastikan solusi yang relevan, intuitif, dan efektif.
 
-            Prinsip desain yang diterapkan mengedepankan clean design, tipografi yang kuat, serta palet warna hijau yang harmonis untuk membangun identitas brand yang konsisten dan profesional.
-        `,
+            Perancangan navigasi dan struktur informasi dikembangkan secara sistematis guna menciptakan pengalaman yang jelas dan mudah dipahami. Dari sisi visual, proyek ini menerapkan prinsip Visual Branding dengan pendekatan clean design, tipografi yang kuat, serta palet warna hijau yang harmonis untuk membangun identitas brand yang konsisten, profesional, dan mudah dikenali.
+
+            Fokus utama proyek ini adalah menciptakan keseimbangan antara estetika dan fungsionalitas, sehingga desain tidak hanya menarik secara visual tetapi juga mendukung tujuan bisnis dan kebutuhan pengguna secara optimal.`,
         tags: ['Figma', 'UI/UX', 'Landing Page', 'HTML/CSS'],
         link: '#',
         color: '#f43f5e',
@@ -112,7 +125,10 @@ export const projects = [
             'Figma',
             'User Centered Design',
             'Visual Branding'
-        ]
+        ],
+        role: 'UI/UX Designer',
+        category: 'Web Design',
+        timeline: '2024'
     },
     {
         title: 'Website Diskominfo',
@@ -121,10 +137,11 @@ export const projects = [
         images: ['/ko1.png', '/ko2.png', '/ko3.png', '/ko4.png'], // Placeholder
         description: 'Pengembangan sistem informasi untuk lembaga pemerintahan DISKOMINFO menggunakan framework CodeIgniter 2.5 dengan fokus pada manajemen data.',
         longDescription: `
-            Pengembangan Website Resmi dan Sistem Informasi Internal Dinas Komunikasi dan Informatika (Diskominfo) merupakan sebuah sistem berbasis web yang dirancang untuk mendukung pelayanan informasi publik serta manajemen data internal organisasi secara terintegrasi.
+            Proyek ini merupakan pengembangan Website Resmi dan Sistem Informasi Internal untuk Dinas Komunikasi dan Informatika (Diskominfo), yang dirancang sebagai platform terintegrasi untuk mendukung pelayanan informasi publik sekaligus pengelolaan data internal organisasi.
 
-            Sistem ini dibangun menggunakan PHP dengan Framework CodeIgniter versi 2.5 dan dijalankan pada lingkungan pengembangan XAMPP (Apache, MySQL, PHP). Website ini menggabungkan fungsi portal informasi publik dengan sistem administrasi internalberbasis dashboard untuk meningkatkan efisiensi pengelolaan data dan transparansi layanan.    
-        `,
+Sistem menggabungkan fungsi portal informasi publik dengan dashboard administrasi internal dalam satu arsitektur aplikasi yang terstruktur. Pendekatan ini memungkinkan pengelolaan konten, data, dan informasi dilakukan secara lebih efisien, terpusat, serta mendukung transparansi layanan kepada masyarakat.
+
+Aplikasi dikembangkan menggunakan PHP dengan framework CodeIgniter 2.5 dan dirancang dengan struktur modular untuk menjaga maintainability serta stabilitas sistem. Implementasi dashboard internal membantu optimalisasi proses administrasi dan manajemen data secara sistematis.`,
         tags: ['CodeIgniter 2.5', 'PHP', 'MySQL', 'Bootstrap'],
         link: '#',
         color: '#10b981',
@@ -140,6 +157,9 @@ export const projects = [
             'MySQL',
             'Bootstrap 3',
             'XAMPP'
-        ]
+        ],
+        role: 'Full Stack Developer',
+        category: 'Government System',
+        timeline: '2023'
     },
 ];

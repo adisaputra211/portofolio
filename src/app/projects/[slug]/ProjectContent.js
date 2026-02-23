@@ -21,10 +21,10 @@ export default function ProjectContent({ project }) {
             </nav>
 
             <div className={`${styles.bentoGrid} ${project.orientation === 'portrait' ? styles.portraitGrid : ''}`}>
-                {/* Header Card */}
                 <div className={`${styles.bentoCard} ${styles.headerCard} animate-on-scroll`}>
                     <h1 className={`${styles.title} animate-on-scroll delay-1`}>{project.title}</h1>
                     <p className={`${styles.shortDesc} animate-on-scroll animate-only-fade delay-2`}>{project.description}</p>
+
                     <div className={`${styles.tagList} animate-on-scroll delay-3`}>
                         {project.tags.map((tag, idx) => (
                             <span key={tag} className={`${styles.tag} animate-on-scroll delay-${idx + 4}`} style={{ color: project.color, borderColor: `${project.color}40`, background: `${project.color}10` }}>
@@ -111,24 +111,6 @@ export default function ProjectContent({ project }) {
                     </div>
                 )}
 
-                {/* Links Card */}
-                <div className={`${styles.bentoCard} ${styles.linksCard} animate-on-scroll`}>
-                    <h3 className={`${styles.cardTitle} animate-on-scroll delay-1`} style={{ marginBottom: '8px' }}>Ready to see it?</h3>
-                    <p className="animate-on-scroll delay-2" style={{ color: 'var(--neutral-400)', fontSize: '0.9rem' }}>Explore the live project or source code.</p>
-                    <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.visitBtn} animate-on-scroll delay-3`}
-                    >
-                        Visit Project
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </div>
             </div>
         </div>
     );
