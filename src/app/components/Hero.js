@@ -125,7 +125,7 @@ export default function Hero() {
                                 {'  '}<span className={styles.prop}>name</span>:{' '}
                                 <span className={styles.string}>&quot;Adi&quot;</span>,<br />
                                 {'  '}<span className={styles.prop}>skills</span>:{' '}
-                                <span className={styles.string}>[&quot;React&quot;, &quot;Node&quot;]</span>,<br />
+                                <span className={styles.string}>[&quot;React&quot;, &quot;Next&quot;]</span>,<br />
                                 {'  '}<span className={styles.prop}>passion</span>:{' '}
                                 <span className={styles.string}>&quot;Building&quot;</span>,<br />
                                 {'  '}<span className={styles.prop}>status</span>:{' '}
