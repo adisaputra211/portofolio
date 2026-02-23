@@ -3,7 +3,7 @@ export const projects = [
         title: 'IoT Monitoring System',
         slug: 'iot-monitoring-system',
         orientation: 'landscape',
-        images: ['/IoT2.jpeg', '/IoT1.jpeg', '/IoT3.jpeg'], // Placeholder for now
+        images: ['/IoT2.jpeg', '/IoT1.jpeg', '/IoT3.jpeg', '/IoT4.jpeg'], // Placeholder for now
         description: 'Sistem IoT penyiraman tanaman otomatis berbasis Fuzzy Logic dengan integrasi dashboard web real time.',
         longDescription: `
             Sistem Internet of Things (IoT) untuk monitoring dan penyiraman tanaman otomatis berbasis ESP32 yang dirancang untuk meningkatkan efisiensi penggunaan air serta mendukung perawatan tanaman secara cerdas.
