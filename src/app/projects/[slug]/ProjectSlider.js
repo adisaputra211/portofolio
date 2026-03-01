@@ -1,25 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function ProjectSlider({ images, title, color, orientation }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState(false);
     const isPortrait = orientation === 'portrait';
 
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-    };
-
-    const goToSlide = (index) => {
+    const goToSlide = useCallback((index) => {
+        if (isTransitioning || index === currentIndex) return;
+        setIsTransitioning(true);
         setCurrentIndex(index);
-    };
+        setTimeout(() => setIsTransitioning(false), 400);
+    }, [isTransitioning, currentIndex]);
+
+    const nextSlide = useCallback(() => {
+        goToSlide(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+    }, [currentIndex, images.length, goToSlide]);
+
+    const prevSlide = useCallback(() => {
+        goToSlide(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
+    }, [currentIndex, images.length, goToSlide]);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -35,76 +39,115 @@ export default function ProjectSlider({ images, title, color, orientation }) {
         }
     };
 
-    // Handle escape key and arrows to close/navigate modal
+    // Handle keyboard navigation
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (!isModalOpen) return;
-
-            if (e.key === 'Escape') closeModal();
+            if (e.key === 'Escape' && isModalOpen) closeModal();
             if (e.key === 'ArrowRight') nextSlide();
             if (e.key === 'ArrowLeft') prevSlide();
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [isModalOpen, images.length]);
+    }, [isModalOpen, nextSlide, prevSlide]);
 
     if (!images || images.length === 0) return null;
 
     return (
         <>
             <div className={`${styles.bentoCard} ${styles.imageCard} animate-on-scroll delay-2`}>
-                <div
-                    className={styles.imageWrapper}
-                    style={{
-                        transform: `translateX(-${currentIndex * 100}%)`,
-                        minHeight: isPortrait ? '540px' : '480px',
-                        cursor: 'zoom-in'
-                    }}
-                    onClick={openModal}
-                    title="Click to enlarge"
-                >
-                    {images.map((img, index) => (
-                        <div key={index} className={styles.slide}>
-                            <Image
-                                src={img}
-                                alt={`${title} - image ${index + 1}`}
-                                fill
-                                style={{ objectFit: 'contain' }}
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
-                                priority={index === 0}
-                            />
-                            <div className={styles.imageOverlay} style={{ background: `linear-gradient(to top, var(--neutral-950), transparent 50%)` }}></div>
+                {/* Main Image Display */}
+                <div className={styles.galleryMain}>
+                    <div
+                        className={styles.mainImageContainer}
+                        onClick={openModal}
+                        title="Click to enlarge"
+                    >
+                        {images.map((img, index) => (
+                            <div
+                                key={index}
+                                className={`${styles.mainSlide} ${currentIndex === index ? styles.mainSlideActive : ''}`}
+                            >
+                                <Image
+                                    src={img}
+                                    alt={`${title} - image ${index + 1}`}
+                                    fill
+                                    style={{ objectFit: 'contain' }}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 60vw"
+                                    priority={index === 0}
+                                />
+                            </div>
+                        ))}
+
+                        {/* Image counter badge */}
+                        <div className={styles.imageCounter}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            {currentIndex + 1} / {images.length}
                         </div>
-                    ))}
+
+                        {/* Zoom hint */}
+                        <div className={styles.zoomHint}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                <line x1="11" y1="8" x2="11" y2="14"></line>
+                                <line x1="8" y1="11" x2="14" y2="11"></line>
+                            </svg>
+                        </div>
+
+                        {/* Nav arrows on main image */}
+                        {images.length > 1 && (
+                            <>
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                                    className={`${styles.galleryNavBtn} ${styles.galleryPrev}`}
+                                    aria-label="Previous slide"
+                                >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                </button>
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                                    className={`${styles.galleryNavBtn} ${styles.galleryNext}`}
+                                    aria-label="Next slide"
+                                >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </>
+                        )}
+                    </div>
                 </div>
 
+                {/* Thumbnail Strip */}
                 {images.length > 1 && (
-                    <>
-                        <div className={`${styles.sliderNav} animate-on-scroll delay-2`}>
-                            <button onClick={(e) => { e.stopPropagation(); prevSlide(); }} className={styles.navBtn} aria-label="Previous slide">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <polyline points="15 18 9 12 15 6"></polyline>
-                                </svg>
-                            </button>
-                            <button onClick={(e) => { e.stopPropagation(); nextSlide(); }} className={styles.navBtn} aria-label="Next slide">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div className={`${styles.sliderDots} animate-on-scroll delay-3`}>
-                            {images.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={(e) => { e.stopPropagation(); goToSlide(index); }}
-                                    className={`${styles.dot} ${currentIndex === index ? styles.dotActive : ''}`}
-                                    style={currentIndex === index ? { background: color } : {}}
-                                    aria-label={`Go to slide ${index + 1}`}
+                    <div className={`${styles.thumbnailStrip} animate-on-scroll delay-3`}>
+                        {images.map((img, index) => (
+                            <button
+                                key={index}
+                                onClick={() => goToSlide(index)}
+                                className={`${styles.thumbnail} ${currentIndex === index ? styles.thumbnailActive : ''}`}
+                                style={currentIndex === index ? { borderColor: color, boxShadow: `0 0 12px ${color}30` } : {}}
+                                aria-label={`View image ${index + 1}`}
+                            >
+                                <Image
+                                    src={img}
+                                    alt={`${title} thumbnail ${index + 1}`}
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                    sizes="100px"
                                 />
-                            ))}
-                        </div>
-                    </>
+                                {currentIndex === index && (
+                                    <div className={styles.thumbnailGlow} style={{ background: `${color}20` }}></div>
+                                )}
+                            </button>
+                        ))}
+                    </div>
                 )}
             </div>
 
@@ -155,4 +198,3 @@ export default function ProjectSlider({ images, title, color, orientation }) {
         </>
     );
 }
-
