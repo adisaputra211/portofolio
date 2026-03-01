@@ -9,6 +9,25 @@ export function generateStaticParams() {
     }));
 }
 
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    const project = projects.find((p) => p.slug === slug);
+
+    if (!project) {
+        return { title: 'Project Not Found' };
+    }
+
+    return {
+        title: `${project.title} - Adi Saputra Project`,
+        description: project.description,
+        openGraph: {
+            title: `${project.title} | Adi Saputra Portfolio`,
+            description: project.description,
+            images: project.images?.[0] ? [{ url: project.images[0] }] : [],
+        },
+    };
+}
+
 export default async function ProjectDetail({ params }) {
     const { slug } = await params;
     const project = projects.find((p) => p.slug === slug);

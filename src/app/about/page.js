@@ -109,7 +109,7 @@ export default function AboutPage() {
                     <div className={`${styles.heroImage} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '0.1s' }}>
                         <Image
                             src="/Profil2.png"
-                            alt="Profile Photo"
+                            alt="Adi Saputra - Portfolio Photo"
                             fill
                             style={{ objectFit: 'cover', objectPosition: 'top' }}
                             priority

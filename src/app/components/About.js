@@ -20,7 +20,7 @@ export default function About() {
                             <div className={styles.profileImage}>
                                 <Image
                                     src="/Profil2.png"
-                                    alt="Profile Photo"
+                                    alt="Adi Saputra - Web Developer & IoT Enthusiast"
                                     fill
                                     style={{ objectFit: 'cover', objectPosition: 'top' }}
                                     priority
