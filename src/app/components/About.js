@@ -71,12 +71,10 @@ export default function About() {
                         </div>
 
                         <p className={`${styles.bio} animate-on-scroll delay-3`}>
-                            I&apos;m Bachelor of Computer Science with experience in web development,
-                            IoT systems, and hardware support. Skilled in Next.js, basic backend frameworks,
-                            and IoT integration, I enjoy building responsive and efficient digital solutions
-                            that connect software and hardware technologies. My background in hardware support
-                            gives me a strong foundation in troubleshooting, system diagnostics, and understanding
-                            the physical layer of technology from component level issues to full system integration.
+                            I&apos;m Adi Saputra, a Bachelor of Computer Science and a dedicated web developer with experience in
+                            IoT systems and hardware support. As an Indonesian-based developer, I specialize in Next.js,
+                            React, and IoT integration, building responsive and efficient digital solutions
+                            that connect software and hardware technologies.
                         </p>
                         <p className={`${styles.bio} animate-on-scroll delay-3`}>
                             Passionate about continuous learning and emerging technologies

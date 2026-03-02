@@ -51,7 +51,7 @@ export default function Hero() {
                     </h1>
 
                     <p className={`${styles.tagline} animate-on-scroll delay-2`}>
-                        Bachelor of Computer Science | Web & IoT Enthusiast
+                        Adi Saputra Web Developer | Bachelor of Computer Science | IoT Enthusiast
                     </p>
 
                     <p className={`${styles.description} animate-on-scroll delay-3`}>

@@ -15,7 +15,7 @@ export const metadata = {
     'Adi Saputra',
     'Nur Cahyo Adi Saputra',
     'adi saputra portfolio',
-    'adi saputra web developer',
+    'adisaputra web developer',
     'adi saputra iot',
     'web developer Magelang',
     'iot developer Indonesia',
