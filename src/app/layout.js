@@ -11,13 +11,12 @@ export const metadata = {
   description:
     'Portfolio Adi Saputra (adisaputra) - Sarjana Komputer, Web Developer & IoT Enthusiast. Skilled in Next.js, React, IoT integration, and hardware troubleshooting. Based in Magelang, Indonesia.',
   keywords: [
-    'adisaputra',
     'adi saputra',
     'Adi Saputra',
     'Nur Cahyo Adi Saputra',
-    'adisaputra portfolio',
-    'adisaputra web developer',
-    'adisaputra iot',
+    'adi saputra portfolio',
+    'adi saputra web developer',
+    'adi saputra iot',
     'web developer Magelang',
     'iot developer Indonesia',
     'portfolio adi saputra',
@@ -71,33 +70,49 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Nur Cahyo Adi Saputra',
-    alternateName: ['Adi Saputra', 'adisaputra'],
-    url: SITE_URL,
-    image: `${SITE_URL}/Profil2.png`,
-    jobTitle: 'Web Developer & IoT Enthusiast',
-    description:
-      'Sarjana Komputer specializing in Next.js, React, IoT integration, and hardware troubleshooting.',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Magelang',
-      addressCountry: 'ID',
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Nur Cahyo Adi Saputra',
+      alternateName: ['Adi Saputra', 'adisaputra'],
+      url: SITE_URL,
+      image: `${SITE_URL}/Profil2.png`,
+      jobTitle: 'Web Developer & IoT Enthusiast',
+      description:
+        'Sarjana Komputer specializing in Next.js, React, IoT integration, and hardware troubleshooting.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Magelang',
+        addressCountry: 'ID',
+      },
+      email: 'adisaputra1523@gmail.com',
+      sameAs: ['https://github.com/saputraaa211'],
+      knowsAbout: [
+        'Web Development',
+        'IoT',
+        'Next.js',
+        'React',
+        'Hardware Troubleshooting',
+        'Arduino',
+        'ESP32',
+      ],
     },
-    email: 'adisaputra1523@gmail.com',
-    sameAs: ['https://github.com/saputraaa211'],
-    knowsAbout: [
-      'Web Development',
-      'IoT',
-      'Next.js',
-      'React',
-      'Hardware Troubleshooting',
-      'Arduino',
-      'ESP32',
-    ],
-  };
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Adi Saputra Portfolio',
+      alternateName: ['adisaputra'],
+      url: SITE_URL,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Adi Saputra Portfolio',
+      url: SITE_URL,
+      logo: `${SITE_URL}/Logo.png`,
+    },
+  ];
 
   return (
     <html lang="id">
