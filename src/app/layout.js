@@ -13,7 +13,7 @@ export const metadata = {
     'Web Developer Magelang - Adi Saputra. Sarjana Komputer & IoT Enthusiast specializing in Next.js, React, and IoT solutions. Based in Magelang, Indonesia.',
   keywords: [
     'Web Developer Magelang',
-    'web developer Magelang',
+    'webdeveloper magelang',
     'adi saputra',
     'Adi Saputra',
     'Nur Cahyo Adi Saputra',
