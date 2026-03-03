@@ -71,7 +71,7 @@ export default function About() {
                         </div>
 
                         <p className={`${styles.bio} animate-on-scroll delay-3`}>
-                            I&apos;m Adi Saputra, a Bachelor of Computer Science and a dedicated web developer with experience in
+                            I&apos;m Adi Saputra, a <strong>Web Developer Magelang</strong> and Bachelor of Computer Science with experience in
                             IoT systems and hardware support. As an Indonesian-based developer, I specialize in Next.js,
                             React, and IoT integration, building responsive and efficient digital solutions
                             that connect software and hardware technologies.

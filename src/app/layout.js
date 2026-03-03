@@ -6,19 +6,20 @@ const SITE_URL = 'https://www.adisaputra-tech.my.id';
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Adi Saputra | Portfolio - IoT & Web Developer',
+    default: 'Web Developer Magelang - Adi Saputra | Portfolio - IoT',
     template: '%s | Adi Saputra',
   },
   description:
-    'Portfolio Adi Saputra (adisaputra) - Sarjana Komputer, Web Developer & IoT Enthusiast. Skilled in Next.js, React, IoT integration, and hardware troubleshooting. Based in Magelang, Indonesia.',
+    'Web Developer Magelang - Adi Saputra. Sarjana Komputer & IoT Enthusiast specializing in Next.js, React, and IoT solutions. Based in Magelang, Indonesia.',
   keywords: [
+    'Web Developer Magelang',
+    'web developer Magelang',
     'adi saputra',
     'Adi Saputra',
     'Nur Cahyo Adi Saputra',
     'adi saputra portfolio',
     'adisaputra web developer',
     'adi saputra iot',
-    'web developer Magelang',
     'iot developer Indonesia',
     'portfolio adi saputra',
   ],
@@ -33,9 +34,9 @@ export const metadata = {
     locale: 'id_ID',
     url: SITE_URL,
     siteName: 'Adi Saputra Portfolio',
-    title: 'Adi Saputra | Portfolio - IoT & Web Developer',
+    title: 'Web Developer Magelang - Adi Saputra | Portfolio',
     description:
-      'Portfolio adisaputra - Sarjana Komputer, Web Developer & IoT Enthusiast. Building responsive web applications and IoT solutions.',
+      'Web Developer Magelang - Adi Saputra. Building responsive web applications and IoT solutions. Sarjana Komputer, Web Developer & IoT Enthusiast.',
     images: [
       {
         url: '/Profil2.png',
@@ -47,9 +48,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adi Saputra | Portfolio - IoT & Web Developer',
+    title: 'Web Developer Magelang - Adi Saputra | Portfolio',
     description:
-      'Portfolio adisaputra - Sarjana Komputer, Web Developer & IoT Enthusiast.',
+      'Web Developer Magelang - Adi Saputra. Sarjana Komputer, Web Developer & IoT Enthusiast.',
     images: ['/Profil2.png'],
   },
   robots: {
