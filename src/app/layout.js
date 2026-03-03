@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import './globals.css';
 
 const SITE_URL = 'https://www.adisaputra-tech.my.id';
@@ -121,6 +122,20 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BPKNP96H3V"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-BPKNP96H3V');
+          `}
+        </Script>
       </head>
       <body>{children}</body>
     </html>
