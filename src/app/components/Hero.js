@@ -51,7 +51,7 @@ export default function Hero() {
                     </h1>
 
                     <p className={`${styles.tagline} animate-on-scroll delay-2`}>
-                        Web Developer Magelang | Adi Saputra | Bachelor of Computer Science | IoT Enthusiast
+                        Bachelor of Computer Science | Web & IoT Developer
                     </p>
 
                     <p className={`${styles.description} animate-on-scroll delay-3`}>
