@@ -119,7 +119,7 @@ export default function AboutPage() {
                     <div className={styles.heroInfo}>
                         <span className={`${styles.heroLabel} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '200ms' }}>About Me</span>
                         <h1 className={`${styles.heroName} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '300ms' }}>Nur Cahyo Adi Saputra</h1>
-                        <p className={`${styles.heroTitle} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '400ms' }}>Bachelor of Computer Science · Web Developer · IoT Enthusiast</p>
+                        <p className={`${styles.heroTitle} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '400ms' }}>Bachelor of Computer Science · Web Developer · IoT Developer</p>
                         <div className={`${styles.heroBadges} ${styles.reveal}`} ref={addRef} style={{ transitionDelay: '500ms' }}>
                             <span className={styles.badge}>🎓 S1 Teknologi Informasi</span>
                             <span className={styles.badge}>💼 Available for Hire</span>

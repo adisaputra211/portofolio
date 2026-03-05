@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './Contact.module.css';
+import { sanitizeText, sanitizeEmail, isValidEmail, containsSuspiciousContent } from '../utils/sanitize';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -13,8 +14,33 @@ export default function Contact() {
 
     const [status, setStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
 
+    const [validationError, setValidationError] = useState('');
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setValidationError('');
+
+        // Sanitize all fields before submission
+        const sanitizedData = {
+            name: sanitizeText(formData.name),
+            email: sanitizeEmail(formData.email),
+            subject: sanitizeText(formData.subject),
+            message: sanitizeText(formData.message),
+        };
+
+        // Validate email format
+        if (!isValidEmail(sanitizedData.email)) {
+            setValidationError('Format email tidak valid. Silakan periksa kembali.');
+            return;
+        }
+
+        // Check for suspicious/malicious content
+        const fieldsToCheck = [sanitizedData.name, sanitizedData.subject, sanitizedData.message];
+        if (fieldsToCheck.some(containsSuspiciousContent)) {
+            setValidationError('Input mengandung karakter yang tidak diizinkan.');
+            return;
+        }
+
         setStatus('submitting');
 
         try {
@@ -23,7 +49,7 @@ export default function Contact() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(sanitizedData)
             });
 
             if (response.ok) {
@@ -155,6 +181,17 @@ export default function Contact() {
                             </div>
                         )}
 
+                        {validationError && (
+                            <div className={styles.errorMessage}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="8" x2="12" y2="12" />
+                                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                                </svg>
+                                <span>{validationError}</span>
+                            </div>
+                        )}
+
                         <form className={`${styles.form} animate-on-scroll delay-2`} onSubmit={handleSubmit}>
                             <div className={styles.formRow}>
                                 <div className={styles.formGroup}>
@@ -167,6 +204,8 @@ export default function Contact() {
                                         onChange={handleChange}
                                         placeholder="Your name"
                                         required
+                                        maxLength={100}
+                                        autoComplete="name"
                                         className={styles.input}
                                         disabled={status === 'submitting'}
                                     />
@@ -181,6 +220,8 @@ export default function Contact() {
                                         onChange={handleChange}
                                         placeholder="your@email.com"
                                         required
+                                        maxLength={254}
+                                        autoComplete="email"
                                         className={styles.input}
                                         disabled={status === 'submitting'}
                                     />
@@ -196,6 +237,7 @@ export default function Contact() {
                                     onChange={handleChange}
                                     placeholder="Project subject"
                                     required
+                                    maxLength={200}
                                     className={styles.input}
                                     disabled={status === 'submitting'}
                                 />
@@ -210,6 +252,7 @@ export default function Contact() {
                                     placeholder="Tell me about your project..."
                                     required
                                     rows={5}
+                                    maxLength={2000}
                                     className={`${styles.input} ${styles.textarea}`}
                                     disabled={status === 'submitting'}
                                 />
