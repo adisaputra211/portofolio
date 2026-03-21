@@ -34,7 +34,7 @@ const experience = [
     {
         role: 'Freelance',
         company: 'My Company',
-        period: 'Agustus 2043 – Now',
+        period: 'Agustus 2024 – Now',
         description: 'Melakukan instalasi ulang OS, troubleshooting, penggantian komponen laptop, dan perawatan perangkat untuk menjaga performa optimal.',
         tags: ['Hardware', 'OS', 'Troubleshooting'],
         icon: '💼',
