@@ -55,9 +55,9 @@ export default function Hero() {
                     </p>
 
                     <p className={`${styles.description} animate-on-scroll delay-3`}>
-                        I build responsive web applications and integrate hardware and
-                        software solutions to create practical and innovative digital systems,
-                        while also exploring data analysis and quality assurance.
+                        I build responsive web applications and integrate hardware software solutions
+                        to create innovative digital systems, with a foundation in data processing,
+                        systematic analysis, and delivering reliable technical solutions across diverse roles.
                     </p>
 
                     <div className={`${styles.actions} animate-on-scroll delay-4`}>
