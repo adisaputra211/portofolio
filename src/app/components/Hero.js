@@ -104,7 +104,7 @@ export default function Hero() {
                         </div>
                         <div className={styles.statDivider}></div>
                         <div className={styles.stat}>
-                            <span className={styles.statNumber}>Hardware & IT Support</span>
+                            <span className={styles.statNumber}>Hardware & Software Support</span>
                             <span className={styles.statLabel}>Experience</span>
                         </div>
                     </div>
